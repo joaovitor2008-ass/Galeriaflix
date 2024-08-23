@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Jogos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #ffcc00;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            width: 100%;
+            position: sticky;
+            top: 80px;
+            z-index: 999;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff9900;
+            transform: scale(1.1);
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin: 40px 0 20px;
+            color: #ffcc00;
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+
+        .section-description {
+            font-size: 1.2em;
+            margin: 0 0 40px;
+            color: #ddd;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .game-card {
+            display: flex;
+            background-color: #444;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+            transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        .game-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+            transform: scale(1.02) translateY(-10px);
+        }
+
+        .game-card img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+            transition: transform 0.3s;
+        }
+
+        .game-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .game-card-content {
+            max-width: 600px;
+        }
+
+        .game-card h2 {
+            margin: 0 0 10px;
+            font-size: 2.2em;
+            color: #ffcc00;
+        }
+
+        .game-card p {
+            font-size: 1.1em;
+            color: #ddd;
+            margin: 10px 0;
+        }
+
+        .game-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff9900;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .game-card a:hover {
+            background-color: #ff6600;
+        }
+
+        footer {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+            color: #bbb;
+            margin-top: 40px;
+            width: 100%;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Galeria de Jogos</h1>
+</header>
+
+<nav>
+    <a href="#csgo">CS:GO</a>
+    <a href="#valorant">Valorant</a>
+    <a href="#fortnite">Fortnite</a>
+    <a href="#roblox">Roblox</a>
+    <a href="#minecraft">Minecraft</a>
+    <a href="#rdr2">Red Dead Redemption</a>
+</nav>
+
+<section>
+    <h2 class="section-title">Jogos Populares</h2>
+    <p class="section-description">Confira alguns dos jogos mais populares do momento. Clique no botão para mais informações ou para jogar.</p>
+
+    <div class="gallery">
+        <div id="csgo" class="game-card">
+            <img src="https://getwallpapers.com/wallpaper/full/6/9/4/41805.jpg" alt="CS:GO">
+            <div class="game-card-content">
+                <h2>CS:GO</h2>
+                <p>CS:GO (Counter-Strike: Global Offensive) é um jogo de tiro em primeira pessoa, focado em confrontos entre equipes de terroristas e contra-terroristas. Disponível na plataforma Steam.</p>
+                <a href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/" target="_blank">Jogar Agora</a>
+            </div>
+        </div>
+        <div id="valorant" class="game-card">
+            <img src="https://freelogopng.com/images/all_img/1664302686valorant-icon-png.png" alt="Valorant">
+            <div class="game-card-content">
+                <h2>Valorant</h2>
+                <p>Valorant é um jogo de tiro em primeira pessoa desenvolvido pela Riot Games. Mistura elementos de tiro tático com habilidades únicas dos personagens.</p>
+                <a href="https://playvalorant.com/" target="_blank">Jogar Agora</a>
+            </div>
+        </div>
+        <div id="fortnite" class="game-card">
+            <img src="https://assets.turbologo.com/blog/pt/2021/11/19082423/fornite.png" alt="Fortnite">
+            <div class="game-card-content">
+                <h2>Fortnite</h2>
+                <p>Fortnite é um jogo de battle royale popular, desenvolvido pela Epic Games. Conhecido por suas construções e seu estilo de jogo dinâmico.</p>
+                <a href="https://www.epicgames.com/fortnite/en-US/home" target="_blank">Jogar Agora</a>
+            </div>
+        </div>
+        <div id="roblox" class="game-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Roblox_Logo_2021.png" alt="Roblox">
+            <div class="game-card-content">
+                <h2>Roblox</h2>
+                <p>Roblox é uma plataforma de jogos online onde os usuários podem criar seus próprios jogos e jogar criações de outros jogadores. A criatividade é o limite.</p>
+                <a href="https://www.roblox.com/" target="_blank">Jogar Agora</a>
+            </div>
+        </div>
+        <div id="minecraft" class="game-card">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/9/9c/Minecraft_capa.png" alt="Minecraft">
+            <div class="game-card-content">
+                <h2>Minecraft</h2>
+                <p>Minecraft é um jogo sandbox que permite aos jogadores explorarem mundos infinitos e construírem tudo o que imaginarem, utilizando blocos.</p>
+                <a href="https://www.minecraft.net/" target="_blank">Jogar Agora</a>
+            </div>
+        </div>
+        <div id="rdr2" class="game-card">
+            <img src="https://th.bing.com/th/id/OIP.zPNVz2VaEHz1LdXLA7LiiAHaFj?rs=1&pid=ImgDetMain" alt="Red Dead Redemption">
+            <div class="game-card-content">
+                <h2>Red Dead Redemption</h2>
+                <p>Red Dead Redemption 2 é um jogo de ação e aventura ambientado no Velho Oeste. Desenvolvido pela Rockstar Games, é aclamado por sua narrativa e mundo aberto detalhado.</p>
+                <a href="https://www.rockstargames.com/reddeadredemption2/" target="_blank">Jogar Agora</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 Galeria de Jogos. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
